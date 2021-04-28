@@ -3,8 +3,14 @@ http://132.232.119.105:4081/iotapi/login
 post方式请求
 Content-Type: text/plain
 测试登录  账号：13313131319    密码：13313131319
-传输格式为：{"password":"13313131319","username":"13313131319"}
-正确返回内容：{"ACL":{"Zf94hIumlQ":{"read":true,"write":true}},"createdAt":"2020-11-19T03:22:28.655Z","email":"13313131319@smh.com","emailVerified":true,"nick":"13313131319","objectId":"Zf94hIumlQ","phone":"13313131319","roles":[{"alias":"新马赫","name":"新马赫","org_type":"平台管理员","tag":{"appconfig":{"expires":"21600","file":"http://47.110.83.36:1250/shapes/upload","graphql":"http://47.110.83.36:5080/iotapi/graphql","home":"E:/shuwa/4.1.0/shuwa_data_center/datacenter/file/files","rest":"http://47.110.83.36:5080/iotapi","secret":"VDEzNjI1MjMxNjAzMTc2MDY0NjE0","topo":"http://47.110.83.36:1350/"}}}],"sessionToken":"r:0863d6a55341a13f6bd4436521901d1b","updatedAt":"2020-11-19T03:22:28.750Z","username":"13313131319"}
+传输格式为：
+```
+{"password":"13313131319","username":"13313131319"}
+```
+正确返回内容：
+```json
+{"ACL":{"Zf94hIumlQ":{"read":true,"write":true}},"createdAt":"2020-11-19T03:22:28.655Z","email":"13313131319@smh.com","emailVerified":true,"nick":"13313131319","objectId":"Zf94hIumlQ","phone":"13313131319","roles":[{"alias":"新马赫","name":"新马赫","org_type":"平台管理员","tag":{"appconfig":{"expires":"21600","file":"http://47.110.83.36:1250/shapes/upload","graphql":"http://47.110.83.36:5080/iotapi/graphql","home":"E:/shuwa/4.1.0/shuwa_data_center/datacenter/file/files","rest":"http://47.110.83.36:5080/iotapi","secret":"VDEzNjI1MjMxNjAzMTc2MDY0NjE0","topo":"http://47.110.83.36:1350/"}}}],"sessionToken":"r:0863d6a55341a13f6bd4436521901d1b","updatedAt":"2020-11-19T03:22:28.750Z","username":"13313131319"}
+```
 
 获取服务器分配的公司的objectId,为了后面的请求接口使用
 两个请求链接为一个，上面的参数为unicode转码，
