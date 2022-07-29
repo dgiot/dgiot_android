@@ -1,6 +1,6 @@
 登录接口使用 ,拿到sessionToken
 ```
-http://132.232.119.105:4081/iotapi/login
+http://prod.dgiotcloud.cn/iotapi/login
 ```
 post方式请求
 Content-Type: text/plain
@@ -11,14 +11,14 @@ Content-Type: text/plain
 ```
 正确返回内容：
 ```json
-{"ACL":{"Zf94hIumlQ":{"read":true,"write":true}},"createdAt":"2020-11-19T03:22:28.655Z","email":"13313131319@smh.com","emailVerified":true,"nick":"13313131319","objectId":"Zf94hIumlQ","phone":"13313131319","roles":[{"alias":"新马赫","name":"新马赫","org_type":"平台管理员","tag":{"appconfig":{"expires":"21600","file":"http://47.110.83.36:1250/shapes/upload","graphql":"http://47.110.83.36:5080/iotapi/graphql","home":"E:/shuwa/4.1.0/shuwa_data_center/datacenter/file/files","rest":"http://47.110.83.36:5080/iotapi","secret":"VDEzNjI1MjMxNjAzMTc2MDY0NjE0","topo":"http://47.110.83.36:1350/"}}}],"sessionToken":"r:0863d6a55341a13f6bd4436521901d1b","updatedAt":"2020-11-19T03:22:28.750Z","username":"13313131319"}
+{"ACL":{"Zf94hIumlQ":{"read":true,"write":true}},"createdAt":"2020-11-19T03:22:28.655Z","email":"13313131319@smh.com","emailVerified":true,"nick":"13313131319","objectId":"Zf94hIumlQ","phone":"13313131319","roles":[{"alias":"新马赫","name":"新马赫","org_type":"平台管理员","tag":{"appconfig":{"expires":"21600","file":"http://prod.dgiotcloud.cn:1250/shapes/upload","graphql":"http://prod.dgiotcloud.cn/iotapi/graphql","home":"E:/shuwa/4.1.0/shuwa_data_center/datacenter/file/files","rest":"http://prod.dgiotcloud.cn/iotapi","secret":"VDEzNjI1MjMxNjAzMTc2MDY0NjE0","topo":"http://prod.dgiotcloud.cn:1350/"}}}],"sessionToken":"r:0863d6a55341a13f6bd4436521901d1b","updatedAt":"2020-11-19T03:22:28.750Z","username":"13313131319"}
 ```
 
 获取服务器分配的公司的objectId,为了后面的请求接口使用
 两个请求链接为一个，上面的参数为unicode转码，
 ```
-http://132.232.119.105:4081/iotapi/classes/Product?where=%7B%22nodeType%22:1%7D
-http://132.232.119.105:4081/iotapi/classes/Product?where={"nodeType":1}
+http://prod.dgiotcloud.cn/iotapi/classes/Product?where=%7B%22nodeType%22:1%7D
+http://prod.dgiotcloud.cn/iotapi/classes/Product?where={"nodeType":1}
 ```
 get方式请求 ，请求时带上 sessionToken 传输格式为:sessionToken: 获取到的sessionToken值
 正确返回内容:
@@ -29,8 +29,8 @@ get方式请求 ，请求时带上 sessionToken 传输格式为:sessionToken: �
 get方式请求 ，请求时带上 sessionToken 传输格式为:sessionToken: 获取到的sessionToken值
 两个请求链接为一个，上面的参数为unicode转码，
 ```
-http://132.232.119.105:4081/iotapi/classes/Device?skip=0&keys=count%28*%29&limit=20&order=-createdAt&where=%7B%22product%22%3A%220765bee775%22%7D
-http://132.232.119.105:4081/iotapi/classes/Device?skip=0&keys=count(*)&limit=20&order=-createdAt&where={"product":"0765bee775"}
+http://prod.dgiotcloud.cn/iotapi/classes/Device?skip=0&keys=count%28*%29&limit=20&order=-createdAt&where=%7B%22product%22%3A%220765bee775%22%7D
+http://prod.dgiotcloud.cn/iotapi/classes/Device?skip=0&keys=count(*)&limit=20&order=-createdAt&where={"product":"0765bee775"}
 ```
 参数skip和limit为分页使用，where是请求回来的objectid，其他参数为默认的，不需要改动
 
@@ -44,7 +44,7 @@ http://132.232.119.105:4081/iotapi/classes/Device?skip=0&keys=count(*)&limit=20&
 
 获取设备的状态详情接口
 ```
-http://132.232.119.105:4081/iotapi/device
+http://prod.dgiotcloud.cn/iotapi/device
 ```
 post请求方式，请求时带上 sessionToken 传输格式为:sessionToken: 获取到的sessionToken值
 请求传输参数：
